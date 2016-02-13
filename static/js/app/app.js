@@ -11,12 +11,11 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
 import React from "react";
 import ReactDOM from "react-dom";
 import Step1 from "./wizard/step1"
 
-//import mobservable from "bower_components/mobservable/dist/mobservable"
+import mobservable from "bower_components/mobservable/dist/mobservable"
 
 let store = mobservable.observable({
   boxes: [],

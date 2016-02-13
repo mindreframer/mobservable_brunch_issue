@@ -11,12 +11,12 @@ exports.config = {
 
       // To change the order of concatenation of files, explicitly mention here
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
-      order: {
-        after: [
-          "static/vendor/js/mobservable-1.2.4.js",
-          "static/vendor/js/mobservable-react-2.1.4.js"
-        ]
-      }
+      // order: {
+      //   after: [
+      //     "static/vendor/js/mobservable-1.2.4.js",
+      //     "static/vendor/js/mobservable-react-2.1.4.js"
+      //   ]
+      // }
     },
     stylesheets: {
       joinTo: "css/app.css"

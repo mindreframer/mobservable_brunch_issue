@@ -24,8 +24,8 @@ let store = mobservable.observable({
   selection: null,
 })
 
-store.addBox = function(box){
-  box = mobservable.observable(box)
+store.addBox = function(x){
+  let box = {key: this.boxes.length+1, value: x}
   this.boxes.push(box);
 }
 store.addBox(2)
@@ -34,6 +34,7 @@ store.addBox(2)
 
 let Step2 = mobservableReact.observer(React.createClass({
   render: function() {
+    let boxes = this.props.store.boxes;
     return (
       <div>
         <h1>Hello, world! Been waiting for you.</h1>
@@ -42,8 +43,12 @@ let Step2 = mobservableReact.observer(React.createClass({
         </div>
 
         <div>
-          {this.props.store.boxes.length}
+          {boxes.length}
         </div>
+
+        <ul>
+          { boxes.map(box => <li key={box.key}>{box.value}</li>) }
+        </ul>
       </div>
     );
   },

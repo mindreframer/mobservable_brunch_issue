@@ -3,8 +3,8 @@ exports.config = {
   files: {
     javascripts: {
       joinTo: {
-        'js/app.js': /^web\/static\/js\/app/,
-        "js/vendor.js": /^(web\/static\/vendor)|(deps)|(bower_components)|(node_modules)/,
+        'js/app.js': /^static\/js\/app/,
+        "js/vendor.js": /^(static\/vendor)|(deps)|(bower_components)|(node_modules)/,
         'test/js/test.js': /^test(\/|\\)(?!vendor)/,
         'test/js/test-vendor.js': /^test(\/|\\)(?=vendor)/
       },
@@ -13,8 +13,8 @@ exports.config = {
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
       order: {
         after: [
-          "web/static/vendor/js/mobservable-1.2.4.js",
-          "web/static/vendor/js/mobservable-react-2.1.4.js"
+          "static/vendor/js/mobservable-1.2.4.js",
+          "static/vendor/js/mobservable-react-2.1.4.js"
         ]
       }
     },
@@ -30,19 +30,19 @@ exports.config = {
     // This option sets where we should place non-css and non-js assets in.
     // By default, we set this to "/web/static/assets". Files in this directory
     // will be copied to `paths.public`, which is "priv/static" by default.
-    assets: /^(web\/static\/assets)/
+    assets: /^(static\/assets)/
   },
 
   // Phoenix paths configuration
   paths: {
     // Dependencies and current project directories to watch
     watched: [
-      "web/static",
+      "static",
       "test/static"
     ],
 
     // Where to compile files to
-    public: "priv/static"
+    public: "public"
   },
 
   // Configure your plugins
@@ -54,7 +54,7 @@ exports.config = {
         "transform-react-display-name"
       ],
       // Do not use ES6 compiler in vendor code
-      ignore: [/web\/static\/vendor/],
+      ignore: [/static\/vendor/],
       pattern: /\.(js|jsx)$/
     },
     postcss: {
@@ -67,7 +67,7 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      "js/app.js": ["web/static/js/app/app"]
+      "js/app.js": ["static/js/app/app"]
     }
   },
 
@@ -75,6 +75,6 @@ exports.config = {
     enabled: true,
     // Whitelist the npm deps to be pulled in as front-end assets.
     // All other deps in package.json will be excluded from the bundle.
-    whitelist: ["phoenix", "phoenix_html", "react", "react-dom"]
+    whitelist: ["react", "react-dom"]
   }
 };

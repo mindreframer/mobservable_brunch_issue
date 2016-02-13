@@ -14,8 +14,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Step1 from "./wizard/step1"
+import mobservable from "mobservable";
+import mobservableReact from "mobservable-react";
 
-import mobservable from "bower_components/mobservable/dist/mobservable"
 
 let store = mobservable.observable({
   boxes: [],

@@ -1,5 +1,8 @@
 {
   "repository": {},
+  "scripts": {
+    "start": "/usr/local/bin/node node_modules/brunch/bin/brunch watch --stdin"
+  },
   "dependencies": {
     "autoprefixer": "^6.3.2",
     "babel-brunch": "~6.0.0",
